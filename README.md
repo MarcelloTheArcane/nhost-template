@@ -23,7 +23,7 @@ whether a user should be able to access a page.
 
 ``` bash
 # Clone this repo
-$ git clone <url> -b master --single-branch
+$ git clone https://github.com/MarcelloTheArcane/nhost-template -b master --single-branch project-name
 ```
 
 ## Environment variables
