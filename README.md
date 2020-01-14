@@ -28,6 +28,12 @@ This project is preconfigured with [Tailwind](https://tailwindcss.com/). It's pr
 ``` bash
 # Clone this repo
 $ git clone https://github.com/MarcelloTheArcane/nhost-template -b master --single-branch <project-name>
+
+# Enter the new directory
+$ cd <project-name>
+
+# Install dependencies
+$ yarn
 ```
 
 ## Environment variables
@@ -37,9 +43,6 @@ Modify the .env file to use the urls from NHost. You will need to add urls for G
 ## Getting started
 
 ``` bash
-# Install dependencies
-$ yarn
-
 # Start the development server
 $ yarn serve
 ```
