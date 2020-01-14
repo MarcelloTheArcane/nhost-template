@@ -96,11 +96,6 @@ export default {
         },
       },
     },
-    redirect: {
-      login: '/login',
-      logout: '/',
-      home: '/',
-    },
     plugins: [
       '~plugins/auth.js',
     ],
