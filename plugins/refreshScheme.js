@@ -31,7 +31,7 @@ export default class RefreshScheme {
 
     return this.cookies.set(`${this.options.prefix}.${name}`, value, {
       expires,
-      path: '/',
+      path: '/'
     })
   }
 
@@ -41,7 +41,7 @@ export default class RefreshScheme {
 
   _clearToken (name) {
     return this.cookies.remove(`${this.options.prefix}.${name}`, {
-      path: '/',
+      path: '/'
     })
   }
 
@@ -79,7 +79,7 @@ export default class RefreshScheme {
     if (typeof window !== 'undefined') {
       return setInterval(() => {
         return this._loginWithRefresh()
-          .catch(err => {
+          .catch((err) => {
             console.warn(err.message)
             // You can trigger a login popup here.
           })
@@ -101,8 +101,8 @@ export default class RefreshScheme {
       method: this.options.endpoints.login.method,
       data: {
         username,
-        password,
-      },
+        password
+      }
     })
       .then(({ data }) => {
         this._saveLogin(data)
@@ -118,14 +118,14 @@ export default class RefreshScheme {
       url: this.options.endpoints.refresh.url,
       method: this.options.endpoints.refresh.method,
       data: {
-        [this.refreshKey]: this._getToken(this.refreshKey),
-      },
+        [this.refreshKey]: this._getToken(this.refreshKey)
+      }
     })
       .then(({ data }) => {
         this._saveLogin(data)
         return Promise.resolve(data)
       })
-      .catch(err => {
+      .catch((err) => {
         console.warn('Caught error in login with refresh:', err.message)
       })
   }
@@ -157,7 +157,7 @@ export default class RefreshScheme {
           this._triggerRefresh()
           return this.$auth.fetchUserOnce()
         })
-        .catch(err => {
+        .catch((err) => {
           console.warn(err.message)
           // If I log out here, it throws a 'cannot modify headers after they are sent' error.
           // Maybe I should just clear the refresh token instead.
@@ -198,7 +198,7 @@ export default class RefreshScheme {
         this.$auth.setUser(userData)
         return Promise.resolve()
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err)
         return Promise.reject(err)
       })
@@ -208,5 +208,5 @@ export default class RefreshScheme {
 const DEFAULTS = {
   tokenType: 'Bearer',
   globalToken: true,
-  tokenName: 'Authorization',
+  tokenName: 'Authorization'
 }

@@ -29,7 +29,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/apollo.js',
+    '~plugins/apollo.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -53,7 +53,7 @@ export default {
     // Doc: https://auth.nuxtjs.org/
     '@nuxtjs/auth',
     // Doc: https://github.com/microcipcip/cookie-universal
-    'cookie-universal-nuxt',
+    'cookie-universal-nuxt'
   ],
   /*
   ** Axios module configuration
@@ -70,11 +70,11 @@ export default {
       default: {
         httpEndpoint: process.env.HASURA_HTTP_URL,
         httpLinkOptions: {
-          includeExtensions: true,
+          includeExtensions: true
         },
-        wsEndpoint: process.env.HASURA_WSS_URL,
-      },
-    },
+        wsEndpoint: process.env.HASURA_WSS_URL
+      }
+    }
   },
   auth: {
     strategies: {
@@ -85,25 +85,25 @@ export default {
           login: {
             url: process.env.NHOST_LOGIN_URL,
             method: 'post',
-            token: 'jwt_token',
+            token: 'jwt_token'
           },
           refresh: {
             url: process.env.NHOST_REFRESH_URL,
             method: 'post',
-            token: 'refresh_token',
+            token: 'refresh_token'
           },
           logout: false,
           user: {
             url: process.env.NHOST_USER_URL,
             method: 'get',
-            propertyName: 'user',
-          },
-        },
-      },
+            propertyName: 'user'
+          }
+        }
+      }
     },
     plugins: [
-      '~plugins/auth.js',
-    ],
+      '~plugins/auth.js'
+    ]
   },
   /*
   ** Build configuration
@@ -112,21 +112,21 @@ export default {
     postcss: {
       preset: {
         features: {
-          customProperties: false,
-        },
-      },
+          customProperties: false
+        }
+      }
     },
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
       if (ctx.isDev) {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
       }
 
       config.node = {
-        fs: 'empty',
+        fs: 'empty'
       }
-    },
-  },
+    }
+  }
 }

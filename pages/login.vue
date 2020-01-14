@@ -36,7 +36,7 @@ export default {
       password: '',
 
       error: '',
-      loading: false,
+      loading: false
     }
   },
   methods: {
@@ -52,8 +52,8 @@ export default {
         await this.$auth.loginWith('refresh', {
           data: {
             username: this.username,
-            password: this.password,
-          },
+            password: this.password
+          }
         })
 
         this.$router.push(this.$route.query.next || '/')
@@ -63,10 +63,10 @@ export default {
       }
 
       this.loading = false
-    },
+    }
   },
   head: {
-    title: 'Login',
-  },
+    title: 'Login'
+  }
 }
 </script>

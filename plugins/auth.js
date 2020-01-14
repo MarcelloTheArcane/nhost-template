@@ -2,7 +2,7 @@
 
 export default function ({ route, redirect, app }) {
   const allowedRoutes = [
-    '/login',
+    '/login'
   ]
 
   if (allowedRoutes.includes(route.path)) {
@@ -17,7 +17,7 @@ export default function ({ route, redirect, app }) {
   // If we're not logged in, redirect to /login
   if (!app.$auth.loggedIn) {
     redirect(302, '/login', {
-      next: route.fullPath,
+      next: route.fullPath
     })
   }
 }
