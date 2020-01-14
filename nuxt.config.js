@@ -48,8 +48,12 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/apollo-module
     '@nuxtjs/apollo',
+    // Doc: https://auth.nuxtjs.org/
     '@nuxtjs/auth',
+    // Doc: https://github.com/microcipcip/cookie-universal
+    'cookie-universal-nuxt',
   ],
   /*
   ** Axios module configuration
