@@ -127,7 +127,6 @@ export default class RefreshScheme {
       })
       .catch(err => {
         console.warn('Caught error in login with refresh:', err.message)
-        return this._triggerLogBackInPopup()
       })
   }
 
