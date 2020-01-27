@@ -29,7 +29,10 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/apollo.js'
+    {
+      src: '~plugins/apollo.js',
+      mode: 'client',
+    },
   ],
   /*
   ** Nuxt.js dev-modules
