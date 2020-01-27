@@ -27,6 +27,8 @@ This project is preconfigured with [Tailwind](https://tailwindcss.com/). It's pr
 
 From Github, you can click on [`Use this template`](https://github.com/MarcelloTheArcane/nhost-template/generate) to create a new repository based on this one.
 
+Alternatively, you can create a new repository from your terminal:
+
 ``` bash
 # Clone this repo
 $ git clone https://github.com/MarcelloTheArcane/nhost-template -b master --single-branch <project-name>
@@ -37,11 +39,11 @@ $ cd <project-name>
 # Replace origin with your repository url
 $ git remote set-url origin <git repository>
 
+# Send this repository to the remote
+$ git push --origin master
+
 # Add template repository
 $ git remote add template https://github.com/MarcelloTheArcane/nhost-template
-
-# Install dependencies
-$ yarn
 ```
 
 ## Environment variables
@@ -51,8 +53,17 @@ Modify the .env file to use the urls from NHost. You will need to add urls for G
 ## Getting started
 
 ``` bash
+# Install the dependencies
+$ yarn
+
 # Start the development server
 $ yarn serve
+```
+
+To run in production, use the `start` command
+
+``` bash
+$ yarn start
 ```
 
 ### Updating from template
