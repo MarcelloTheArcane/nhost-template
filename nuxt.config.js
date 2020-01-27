@@ -31,8 +31,8 @@ export default {
   plugins: [
     {
       src: '~plugins/apollo.js',
-      mode: 'client',
-    },
+      mode: 'client'
+    }
   ],
   /*
   ** Nuxt.js dev-modules
