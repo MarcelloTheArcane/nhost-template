@@ -80,27 +80,14 @@ export default {
   },
   auth: {
     strategies: {
-      refresh: {
-        _scheme: '~/plugins/refreshScheme.js',
-        prefix: 'auth',
-        endpoints: {
-          login: {
-            url: process.env.NHOST_LOGIN_URL,
-            method: 'post',
-            token: 'jwt_token'
-          },
-          refresh: {
-            url: process.env.NHOST_REFRESH_URL,
-            method: 'post',
-            token: 'refresh_token'
-          },
-          logout: false,
-          user: {
-            url: process.env.NHOST_USER_URL,
-            method: 'get',
-            propertyName: 'user'
-          }
-        }
+      nhost: {
+        _scheme: '~/plugins/nhostScheme.js',
+        prefix: 'nhost',
+        config: {
+          base_url: process.env.NHOST_BASE_URL,
+          ssr: true
+        },
+        tokenName: 'auth.jwt_token'
       }
     },
     plugins: [

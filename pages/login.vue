@@ -7,7 +7,7 @@
 
       <p>
         <input
-          v-model="username"
+          v-model="email"
           type="email"
           placeholder="Email"
         >
@@ -32,7 +32,7 @@ export default {
   name: 'LoginPage',
   data () {
     return {
-      username: '',
+      email: '',
       password: '',
 
       error: '',
@@ -44,16 +44,14 @@ export default {
       this.error = ''
       this.loading = true
 
-      if (!this.username || !this.password) {
+      if (!this.email || !this.password) {
         return
       }
 
       try {
-        await this.$auth.loginWith('refresh', {
-          data: {
-            username: this.username,
-            password: this.password
-          }
+        await this.$auth.loginWith('nhost', {
+          email: this.email,
+          password: this.password
         })
 
         this.$router.push(this.$route.query.next || '/')
