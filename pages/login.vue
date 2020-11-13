@@ -49,10 +49,7 @@ export default {
       }
 
       try {
-        await this.$auth.loginWith('nhost', {
-          email: this.email,
-          password: this.password
-        })
+        await this.$auth.login(this.email, this.password)
 
         this.$router.push(this.$route.query.next || '/')
       } catch (err) {
