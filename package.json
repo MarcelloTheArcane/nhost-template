@@ -13,24 +13,27 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxtjs/apollo": "^4.0.0-rc19",
-    "@nuxtjs/auth": "^4.8.5",
-    "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/dotenv": "^1.4.0",
-    "cookie-universal-nuxt": "^2.1.0",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "cookie-universal-nuxt": "^2.1.4",
     "dotenv": "^8.2.0",
-    "nuxt": "^2.0.0"
+    "nhost-js-sdk": "^2.3.1",
+    "nuxt": "^2.14.7"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^1.0.1",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/tailwindcss": "^1.0.0",
-    "@vue/test-utils": "^1.0.0-beta.27",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.1.0",
-    "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "jest": "^24.1.0",
-    "vue-jest": "^4.0.0-0"
+    "@nuxtjs/eslint-config": "^4.0.0",
+    "@nuxtjs/eslint-module": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^3.2.0",
+    "@vue/test-utils": "^1.1.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.13.0",
+    "eslint-config-developit": "^1.2.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-vue-libs": "^4.0.0",
+    "jest": "^26.6.3",
+    "vue-jest": "^3.0.7"
   }
 }
