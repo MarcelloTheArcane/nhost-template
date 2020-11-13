@@ -1,6 +1,5 @@
-// From https://github.com/nuxt-community/auth-module/issues/165#issuecomment-388673580
-
 export default function ({ route, redirect, app }) {
+  // Add all routes that
   const allowedRoutes = [
     '/login'
   ]
@@ -14,8 +13,12 @@ export default function ({ route, redirect, app }) {
     return
   }
 
+  console.log(app.$auth.isAuthenticated())
+
   // If we're not logged in, redirect to /login
-  if (!app.$auth.strategy.auth.isAuthenticated()) {
-    redirect(302, '/login')
+  if (!app.$auth.isAuthenticated()) {
+    redirect(302, '/login', {
+      next: route.path
+    })
   }
 }
