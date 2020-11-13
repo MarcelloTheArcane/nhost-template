@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'Index',
-  middleware: ['auth']
+  name: 'Index'
 }
 </script>
