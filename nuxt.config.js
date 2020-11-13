@@ -31,7 +31,9 @@ export default {
     {
       src: '~plugins/apollo.js',
       mode: 'client'
-    }
+    },
+    // Doc: https://docs.nhost.io/libraries/nhost-js-sdk
+    '~/plugins/nhost/plugin.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -52,8 +54,6 @@ export default {
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/apollo-module
     '@nuxtjs/apollo',
-    // Doc: https://auth.nuxtjs.org/
-    '@nuxtjs/auth',
     // Doc: https://github.com/microcipcip/cookie-universal
     'cookie-universal-nuxt'
   ],
@@ -78,21 +78,21 @@ export default {
       }
     }
   },
-  auth: {
-    strategies: {
-      nhost: {
-        _scheme: '~/plugins/nhostScheme.js',
-        prefix: 'nhost',
-        config: {
-          base_url: process.env.NHOST_BASE_URL,
-          ssr: true
-        },
-        tokenName: 'auth.jwt_token'
-      }
+  /*
+  ** Nhost configuration
+  */
+  nhost: {
+    // Configuration as per https://docs.nhost.io/libraries/nhost-js-sdk#setup
+    config: {
+      base_url: process.env.NHOST_BASE_URL,
+      ssr: true
     },
-    plugins: [
-      '~plugins/auth.js'
-    ]
+    // Match tokenName with Apollo config
+    tokenName: 'auth.jwt_token'
+  },
+
+  router: {
+    middleware: 'nhost'
   },
   /*
   ** Build configuration

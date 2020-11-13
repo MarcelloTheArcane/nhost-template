@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.5",
-    "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/dotenv": "^1.4.1",
     "cookie-universal-nuxt": "^2.1.4",
