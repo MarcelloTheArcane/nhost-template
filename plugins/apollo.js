@@ -5,7 +5,7 @@ export default function ({ app }) {
   client.wsClient.connectionParams = () => {
     return {
       headers: {
-        Authorization: `Bearer ${app.$auth.strategy.auth.getJWTToken()}`
+        Authorization: `Bearer ${app.$auth.getJWTToken()}`
       }
     }
   }
