@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 export default {
-  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -112,6 +111,7 @@ export default {
   ** Build configuration
   */
   build: {
+    transpile: ['@nuxtjs/auth'],
     postcss: {
       preset: {
         features: {
