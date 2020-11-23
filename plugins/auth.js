@@ -15,9 +15,7 @@ export default function ({ route, redirect, app }) {
   }
 
   // If we're not logged in, redirect to /login
-  if (!app.$auth.loggedIn) {
-    redirect(302, '/login', {
-      next: route.fullPath
-    })
+  if (!app.$auth.strategy.auth.isAuthenticated()) {
+    redirect(302, '/login')
   }
 }
